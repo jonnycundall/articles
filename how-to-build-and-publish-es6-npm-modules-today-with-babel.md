@@ -117,13 +117,10 @@ Before publishing to npm, you'll firstly want to build your source files using t
 <pre>
 <code>"scripts": {
   "build": "babel-cli --preset xxx",
-  <strong>"prepublish": "npm run build"</strong>
+  <strong>"prepublishOnly": "npm run build"</strong>
 }</code></pre>
 
 Now, when you run `npm publish`, npm will automatically run the `build` script. This is both convenient and helps to avoid errors.
-
-
-Whilst I have found `prepublish` to work fine for my needs, I feel it important to mention that there is a [known UX issue](https://github.com/npm/npm/issues/10074#issue-112707857) with `prepublish` whereby the script is implicitly run when the package is installed. This may or may not be a problem for you.
 
 If you haven't done so already, use [these instructions](https://gist.github.com/coolaj86/1318304) by [@coolaj86](https://github.com/coolaj86) to set your npm author information. Then, simply run the following command whilst in the module folder:
 
